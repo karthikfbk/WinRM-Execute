@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cmd:Appdata xmlns:cmd="https://commandnamespace">
+  <cmd:Command Name="ENUMERATE HOST SYSTEM" NoOfArgs="1" SampleCommand="winrm enumerate http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_HostComputerSystem?__cimnamespace=root/virt -remote:https://$192.63.242.90$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="SMS IP" Value="192.63.221.21" />
+  </cmd:Command>
+  <cmd:Command Name="ENUMERATE SOFT PARTITION" NoOfArgs="1" SampleCommand="winrm enumerate http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SoftPartitionComputerSystem?__cimnamespace=root/virt -remote:https://$192.63.242.135$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="SMS IP" Value="192.63.242.194" />
+  </cmd:Command>
+  <cmd:Command Name="ENUMERATE CHASSIS PARTITION COMPUTER SYSTEM" NoOfArgs="1" SampleCommand="winrm enumerate http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_PartitionChassisComputerSystem?__cimnamespace=root/virt -remote:https://$192.63.239.86$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="SMS IP" Value="192.63.221.19" />
+  </cmd:Command>
+  <cmd:Command Name="GET INSTANCE OF SOFT PARTITION COMPUTER SYSTEM" NoOfArgs="2" SampleCommand="winrm get &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SoftPartitionComputerSystem?__cimnamespace=root/virt+Name=$72120901-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_SoftPartitionComputerSystem&quot; -remote:https://$192.63.226.140$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck ">
+    <cmd:Argument Name="IMAGE UUID" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="GET INSTANCE OF CHASSIS PARTITION COMPUTER SYSTEM" NoOfArgs="2" SampleCommand="winrm get &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_PartitionChassisComputerSystem?__cimnamespace=root/virt+Name=$72120111-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_PartitionChassisComputerSystem&quot; -remote:https://$192.63.226.140$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck ">
+    <cmd:Argument Name="CHASSIS UUID" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="GET INSTANCE OF BLOCK PARTITION COMPUTER SYSTEM" NoOfArgs="2" SampleCommand="winrm get &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_PartitionBlockComputerSystem?__cimnamespace=root/virt+Name=$72120701-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_PartitionBlockComputerSystem&quot; -remote:https://$192.63.226.140$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck ">
+    <cmd:Argument Name="BLOCK UUID" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="CREATE PARTITION IMAGE" NoOfArgs="4" SampleCommand="winrm invoke CreatePartitionImage &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_HostComputerSystem?__cimnamespace=root/virt+Name=$44454C4C-4400-1030-804E-C8C04F395431$+CreationClassName=SPAR_HostComputerSystem&quot; @{UUID=&quot;$ABAB4C4C-3400-10BA-8938-C7C04F484D33$&quot;;NAME=&quot;$MyPartitionA$&quot;} -remote:https://$192.63.221.149$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="HOST UUID" />
+    <cmd:Argument Name="IMAGE UUID" />
+    <cmd:Argument Name="IMAGE NAME" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="DELETE PARTITION IMAGE" NoOfArgs="2" SampleCommand="winrm delete &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SoftPartitionComputerSystem?__cimnamespace=root/virt+UUID=$72120906-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_SoftPartitionComputerSystem&quot; -remote:https://$192.63.239.86$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck ">
+    <cmd:Argument Name="IMAGE UUID" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="INVOKE REQUEST STATE CHANGE" NoOfArgs="3" SampleCommand="winrm invoke RequestStateChange &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SoftPartitionComputerSystem?__cimnamespace=root/virt+Name=$72120901-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_HostComputerSystem&quot; @{RequestedState=&quot;$60011$&quot;} -remote:https://$192.63.242.189$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="IMAGE UUID" Value="72120901-4AAB-11DC-8530-444553544200" />
+    <cmd:Argument Name="REQUESTED STATE" Value="60003" />
+    <cmd:Argument Name="SMS IP" Value="192.63.221.21" />
+  </cmd:Command>
+  <cmd:Command Name="SET CONFIGURATIONID AND THREADS" NoOfArgs="4" SampleCommand="winrm set &quot;http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SoftPartitionComputerSystem?__cimnamespace=root/virt+Name=$72120901-4AAB-11DC-8530-444553544200$+CreationClassName=SPAR_SoftPartitionComputerSystem&quot; @{ConfigurationId=&quot;$00280008-0000-0000-0000-000000000000$&quot;;Threads=&quot;$2$&quot;} -remote:https://$192.63.221.56$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="IMAGE UUID" />
+    <cmd:Argument Name="CONFIGURATION ID" />
+    <cmd:Argument Name="THREADS" />
+    <cmd:Argument Name="SMS IP" />
+  </cmd:Command>
+  <cmd:Command Name="SPAR_SYSTEM_PCI_DEVICE" NoOfArgs="1" SampleCommand="winrm enumerate http://schema.unisys.com/wbem/wscim/1/cim-schema/2/spar/SPAR_SystemPCIDevice?__cimnamespace=root/virt -remote:https://$192.63.221.15$ -authentication:Basic -username:Administrator -password:Administer4Me -skipCAcheck -skipCNcheck">
+    <cmd:Argument Name="SMS IP" Value="192.63.221.21" />
+  </cmd:Command>
+</cmd:Appdata>
